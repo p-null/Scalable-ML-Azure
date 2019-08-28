@@ -7,7 +7,7 @@
 
 ## Workflow
 
-![](/docs/Azure_overview.png)
+![](/docs/Azure_Overview_Full.png)
 
 1. Load historical data from Blob storage to Databricks
 
