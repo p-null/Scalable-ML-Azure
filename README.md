@@ -16,7 +16,7 @@ The data we used can be obtained from [here](https://www.kaggle.com/c/LANL-Earth
 ## Features
 
 - Utilize Azure Active Directory, Virtual Network, Secret scope, Key-Vault to secure data and secret variables.
-- Continuously build projects with Azure DevOps, Deploy image as Azure Container Instance for test and Azure Kubeneters Service for production.
+- Continuously build projects with Azure DevOps, Deploy image as Azure Container Instance for test and Azure Kuberneters Service for production.
 
 ## Workflow
 
