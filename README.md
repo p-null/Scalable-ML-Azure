@@ -1,6 +1,10 @@
 # Scalable-ML-Azure
  A real-time scalable machine learning service built with Azure
 
+## Setup
+Clone and add this repo into Azure DevOps. Detailed instructions on build this Azure Machine Learning service will be written in a blog article.
+
+
 ## Background & Data
 This project was built for Microsoft AI Challenge 2019. 
 The data we used can be obtained from [here](https://www.kaggle.com/c/LANL-Earthquake-Prediction).
