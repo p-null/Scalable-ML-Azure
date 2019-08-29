@@ -49,7 +49,7 @@ The data we used can be obtained from [here](https://www.kaggle.com/c/LANL-Earth
     (iii) 4th and (iv) 18th Mel-frequency cepstral coefficients mean. 
 
 
-3. **Cross validation**
+3. **Cross Validation**
 
    Shuffled 3-fold CV
 
@@ -61,4 +61,4 @@ The data we used can be obtained from [here](https://www.kaggle.com/c/LANL-Earth
 
 ![](/docs/Azure_DevOps.png)
 
-- Azure DevOps is used to build the image of the model and release it as an endpoint
+- Azure DevOps is used to continuously build the image of the model and release it as an endpoint
