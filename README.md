@@ -2,10 +2,29 @@
  A complete scalable machine learning project built with Azure
 
 ## Features
-- Utilized Azure Active Directory, Virtual Network, Secret scope, Key-Vault to secure data and secret variables.
-- Continuously built projects with Azure DevOps, Deploy image as Azure Container Instance for test and Azure Kubeneters Service for production.
+- Utilize Azure Active Directory, Virtual Network, Secret scope, Key-Vault to secure data and secret variables.
+- Continuously build projects with Azure DevOps, Deploy image as Azure Container Instance for test and Azure Kubeneters Service for production.
 
-## Workflow
+## Acoustic Signal Manipulation & Modeling
+
+1. Add a constant noise to each 150k segment (both in train and test) by calculating np.random.normal(0, 0.5, 150000). Subtract the median of the segment after noise addition.
+2. Features
+(i) number of peaks of at least support 2 on the denoised signal
+(ii) 20% percentile on std of rolling window of size 50
+(iii) 4th and (iv) 18th Mel-frequency cepstral coefficients mean. 
+3. Cross validation
+Shuffled 3-fold CV
+4. Model
+LightGBM in MMLSpark
+
+## DevOps
+
+![](/docs/Azure_DevOps.png)
+
+- Azure DevOps is used to build the image of the model and release it as an endpoint
+
+
+## Service Workflow
 
 ![](/docs/Azure_Overview_Full.png)
 
