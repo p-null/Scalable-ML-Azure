@@ -30,11 +30,11 @@
    Add a constant noise to each 150k segment (both in train and test) by calculating `np.random.normal(0, 0.5, 150000)`. Subtract the median of the segment after noise addition.
 
 2. **Features**
-  (i) number of peaks of at least support 2 on the denoised signal
 
-  (ii) 20% percentile on std of rolling window of size 50
+    (i) number of peaks of at least support 2 on the denoised signal
+    (ii) 20% percentile on std of rolling window of size 50
+    (iii) 4th and (iv) 18th Mel-frequency cepstral coefficients mean. 
 
-  (iii) 4th and (iv) 18th Mel-frequency cepstral coefficients mean. 
 
 3. **Cross validation**
 
