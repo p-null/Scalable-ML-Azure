@@ -1,5 +1,5 @@
 # Scalable-ML-Azure
- A complete scalable machine learning project built with Azure
+ A real-time scalable machine learning service built with Azure
 
 ## Features
 - Utilize Azure Active Directory, Virtual Network, Secret scope, Key-Vault to secure data and secret variables.
@@ -7,30 +7,32 @@
 
 ## Feature Engineering & Modeling
 
-1. Acoustic Signal Manipulation
+1. **Acoustic Signal Manipulation**
 
-Add a constant noise to each 150k segment (both in train and test) by calculating np.random.normal(0, 0.5, 150000). Subtract the median of the segment after noise addition.
+   Add a constant noise to each 150k segment (both in train and test) by calculating `np.random.normal(0, 0.5, 150000)`. Subtract the median of the segment after noise addition.
 
-2. Features
-(i) number of peaks of at least support 2 on the denoised signal
+2. **Features**
+  (i) number of peaks of at least support 2 on the denoised signal
 
-(ii) 20% percentile on std of rolling window of size 50
+  (ii) 20% percentile on std of rolling window of size 50
 
-(iii) 4th and (iv) 18th Mel-frequency cepstral coefficients mean. 
+  (iii) 4th and (iv) 18th Mel-frequency cepstral coefficients mean. 
 
-3. Cross validation
+3. **Cross validation**
 
-Shuffled 3-fold CV
+   Shuffled 3-fold CV
 
-4. Model
+4. **Model**
 
-LightGBM in MMLSpark
+   LightGBM in MMLSpark
 
 ## DevOps
 
 ![](/docs/Azure_DevOps.png)
 
 - Azure DevOps is used to build the image of the model and release it as an endpoint
+
+
 
 
 ## Service Workflow
