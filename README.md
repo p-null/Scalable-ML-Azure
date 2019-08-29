@@ -1,7 +1,15 @@
 # Scalable-ML-Azure
  A real-time scalable machine learning service built with Azure
 
+## Technology
+- Azure Active Directory, Virtual Network, Secret scope, Key-Vault
+- Azure DevOps, Azure Container Instance, Azure Kubeneters Service
+- Azure Machine Learning Service, Databricks, Blob Storage
+- MMLSPark
+
+
 ## Features
+
 - Utilize Azure Active Directory, Virtual Network, Secret scope, Key-Vault to secure data and secret variables.
 - Continuously build projects with Azure DevOps, Deploy image as Azure Container Instance for test and Azure Kubeneters Service for production.
 
