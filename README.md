@@ -2,7 +2,7 @@
  A real-time scalable machine learning service built with Azure
 
 ## Setup
-Clone and add this repo into Azure DevOps. Detailed instructions on build this Azure Machine Learning service will be written in a blog article.
+Clone and add this repo into Azure DevOps. Detailed instructions on building this Azure Machine Learning service will be written in a blog article.
 
 
 ## Background & Data
