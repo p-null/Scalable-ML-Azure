@@ -17,10 +17,10 @@ The data we used can be obtained from [here](https://www.kaggle.com/c/LANL-Earth
 - MMLSPark
 
 
-## Features
+## Functions
 
+- Prepare environment for model creation. Build model in Databricks. Create images from model. Deploy image to Azure Container Instance and Azure Kubernete Service.
 - Utilize Azure Active Directory, Virtual Network, Secret scope, Key-Vault to secure data and secret variables.
-- Continuously build projects with Azure DevOps, Deploy image as Azure Container Instance for test and Azure Kuberneters Service for production.
 
 ## Workflow
 
@@ -66,3 +66,4 @@ The data we used can be obtained from [here](https://www.kaggle.com/c/LANL-Earth
 ![](/docs/Azure_DevOps.png)
 
 - Azure DevOps is used to continuously build the image of the model and release it as an endpoint
+- Continuously build projects with Azure DevOps, Deploy image as Azure Container Instance for test and Azure Kuberneters Service for production.
