@@ -1,6 +1,11 @@
 # Scalable-ML-Azure
  A real-time scalable machine learning service built with Azure
 
+## Background & Data
+This project was built for Microsoft AI Challenge 2019. 
+The data we used can be obtained from [here](https://www.kaggle.com/c/LANL-Earthquake-Prediction).
+
+
 ## Technology
 - Azure Active Directory, Virtual Network, Secret scope, Key-Vault
 - Azure DevOps, Azure Container Instance, Azure Kubeneters Service
