@@ -23,7 +23,7 @@ The data we used can be obtained from [here](https://www.kaggle.com/c/LANL-Earth
 - Build model in Databricks.
 - Create images from model.
 - Deploy image to Azure Container Instance and Azure Kubernete Service.
-
+- Test ACI endpoint
 
 ## Workflow
 
