@@ -7,7 +7,6 @@ Clone and add this repo into Azure DevOps. Detailed instructions on building thi
 
 ## Background & Data
 This project is part of the our team's final project for Microsoft AI Challenge 2019. 
-
 The data we used can be obtained from [here](https://www.kaggle.com/c/LANL-Earthquake-Prediction).
 
 
