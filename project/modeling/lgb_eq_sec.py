@@ -48,21 +48,6 @@ spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
 dbutils.fs.ls("abfss://" + par_stor2_container + "@" + par_stor2_name + ".dfs.core.windows.net/")
 spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "false")
 
-'''
-par_stor2_train = "p_train.csv"
-par_stor2_test = "p_test.csv"
-
-par_stor2_name = "mlws01386556057"
-par_stor2_container = "eq-container"
-par_stor2_datafile = "p_train.csv"
-par_stor2_key = "qzRmIoWG27Omx6MSlhq0rzwW5TFygu0fTzoS86iQFDlEMBo4vK9iBCHPy5I34Qd8J24/0PauSQ9e2SJkp9pCPQ=="
-
-spark.conf.set("fs.azure.account.key." + par_stor2_name + ".dfs.core.windows.net", par_stor2_key)
-spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
-dbutils.fs.ls("abfss://" + par_stor2_container + "@" + par_stor2_name + ".dfs.core.windows.net/")
-spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "false")
-'''
-
 
 
 # Create a Spark dataframe out of the csv file.
