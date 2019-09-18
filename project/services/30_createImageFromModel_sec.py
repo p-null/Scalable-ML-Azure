@@ -76,4 +76,4 @@ image_json["image_name"] = image.name
 image_json["image_version"] = image.version
 image_json["image_location"] = image.image_location
 with open("../conf/image.json", "w") as outfile:
-  json.dump(image_json,outfile)
+  json.dump(image_json, outfile)

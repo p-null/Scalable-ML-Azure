@@ -51,7 +51,7 @@ spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "false")
 
 
 # Create a Spark dataframe out of the csv file.
-trainingData = sqlContext.read\
+train_data = sqlContext.read\
                     .format('csv')\
                     .options(header='true',\
                              inferSchema='true',\
@@ -59,7 +59,7 @@ trainingData = sqlContext.read\
                              ignoreTrailingWhiteSpace='true')\
                     .load("abfss://" + par_stor2_container + "@" + par_stor2_name + ".dfs.core.windows.net/" + par_stor2_train)
 
-testData = sqlContext.read\
+test_data = sqlContext.read\
                     .format('csv')\
                     .options(header='true',\
                              inferSchema='true',\
@@ -71,7 +71,7 @@ testData = sqlContext.read\
 
 
 # COMMAND ----------
-featureCols = trainingData.columns
+featureCols = train_data.columns
 featureCols.remove('label')
 assembler = VectorAssembler(inputCols=featureCols, outputCol="features")
 
@@ -116,13 +116,13 @@ lgb_model = LightGBMRegressor(numLeaves=4,
 pipe = Pipeline(stages=[assembler, lgb_model])
 
 # train the model
-model_pipeline = pipe.fit(trainingData)
+model_pipeline = pipe.fit(train_data)
         
 # make prediction
-predictions = model_pipeline.transform(testData)
+predictions = model_pipeline.transform(test_data)
 
 
-mdl, ext = par_model_name.split(".")
+model_name, mdl_extension = par_model_name.split(".")
 '''
 from mmlspark import ComputeModelStatistics
 metrics = ComputeModelStatistics(evaluationMetric='regression',
@@ -132,7 +132,7 @@ metrics = ComputeModelStatistics(evaluationMetric='regression',
 
 model_metrics_json = json.loads(metrics.toJSON().first())
 
-with open("/dbfs/" + mdl + "_metrics.json", "w") as outfile:
+with open("/dbfs/" + model_name + "_metrics.json", "w") as outfile:
     json.dump(model_metrics_json, outfile)
 '''
 
@@ -141,10 +141,10 @@ model_pipeline.write().overwrite().save(par_model_name)
         
 # upload the serialized model into run history record
 
-model_zip = mdl + ".zip"
+model_zip = model_name + ".zip"
 
 model_dbfs = os.path.join("/dbfs", par_model_name)
 
-shutil.make_archive('/dbfs/'+ mdl, 'zip', model_dbfs)
+shutil.make_archive('/dbfs/'+ model_name, 'zip', model_dbfs)
 
 

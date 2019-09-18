@@ -18,15 +18,20 @@ def init():
 
         global inputs_dc, prediction_dc
         model_name = "{model_name}"  # interpolated
-        inputs_dc = ModelDataCollector(model_name, identifier="inputs",
+        inputs_dc = ModelDataCollector(model_name,
+                                       identifier="inputs",
                                        feature_names=["json_input_data"])
-        prediction_dc = ModelDataCollector(model_name, identifier="predictions", feature_names=["predictions"])
+        prediction_dc = ModelDataCollector(model_name,
+                                           identifier="predictions",
+                                           feature_names=["predictions"])
 
-        spark = pyspark.sql.SparkSession.builder.appName("AML Production Model").getOrCreate()
+        spark = pyspark.sql.SparkSession.builder.appName(
+            "AML Production Model").getOrCreate()
         model_path = Model.get_model_path(model_name)
         trainedModel = PipelineModel.load(model_path)
     except Exception as e:
         trainedModel = e
+
 
 def run(input_json):
     if isinstance(trainedModel, Exception):
@@ -51,8 +56,10 @@ def run(input_json):
         data = json.loads(input_json)
         data = numpy.array(data)
         print("saving input data" + time.strftime("%H:%M:%S"))
-        inputs_dc.collect(data)  # this call is saving our input data into our blob
-        prediction_dc.collect(predictions) #this call is saving our prediction data into our blob
+        # this call is saving our input data into our blob
+        inputs_dc.collect(data)
+        # this call is saving our prediction data into our blob
+        prediction_dc.collect(predictions)
     except Exception as e:
         result = str(e)
     return json.dumps({"result": result})
